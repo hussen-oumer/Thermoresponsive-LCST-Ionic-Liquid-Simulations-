@@ -1,0 +1,32 @@
+
+;
+; minimization using steepest descent method
+;
+;
+
+integrator          = steep 
+nsteps              = 5000
+nstlog              = 100 
+nstxout             = 100
+;
+;	Energy minimizing stuff
+;
+emstep              =  0.002 
+;
+; vdw cutoff
+rvdw                = 1.0
+DispCorr            = EnerPres
+rlist               = 1.0
+;
+constraints          = h-bonds
+constraint-algorithm = LINCS
+;
+; electrostatic stuff
+coulombtype        = PME
+rcoulomb           = 1.0
+fourierspacing     = 0.1
+pme_order          = 4
+ewald_rtol         = 1.E-5
+optimize_fft      = yes 
+pbc               = xyz
+;
